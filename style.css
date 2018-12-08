@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0a2132;
+}
+
+#content-div {
+    width: 50%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#grid-div {
+    width: 80%;
+    height: 80%;
+    margin: 60px auto;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    background-color: #53636f;
+    border: 1px solid white;
+    position: relative;
+}
+
+.circle {
+    width: 55%;
+    height: 60%;
+    margin-bottom: 20%;
+    margin-top: 20%;
+    margin-left: 22.5%;
+    margin-right: 22.5%;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.line-connector-right {
+    height: 12.5%;
+    width: 50%;
+    margin: 45% auto;
+    margin-left: 50%;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.line-connector-left {
+    height: 12.5%;
+    width: 50%;
+    margin: 45% auto;
+    margin-right: 50%;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.line-connector-up {
+    height: 50%;
+    width: 12.5%;
+    margin-left: 45%;
+    position: absolute;
+    border-radius: 4px;
+}
+
+.line-connector-down {
+    height: 50%;
+    width: 12.5%;
+    margin: 50% auto;
+    margin-left: 45%;
+    position: absolute;
+    border-radius: 4px;
+}

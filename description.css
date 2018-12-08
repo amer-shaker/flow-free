@@ -1,0 +1,44 @@
+#descriptionDiv {
+    text-align: center;
+    margin-top: 10px;
+    padding: 50px;
+}
+
+#descriptionParagarph {
+    width: 1200px;
+    color: white;
+    text-align: center;
+    margin: 10px;
+    margin-top: 20px;
+    font-family: sans-serif;
+}
+
+#descDiv {
+    display: flex;
+    margin-left: 280px;
+}
+
+#descFlowFreeDiv {
+    color: white;
+    font-family: cursive;
+    font-size: 100px;
+    margin-top: 100px;
+}
+
+#descLogo {
+    height: 150px;
+    width: 150px;
+    margin-top: 100px;
+    margin-right: 50px;
+}
+
+#instructionsImage {
+    height: 200px;
+    width: 35%;
+}
+
+#instructionsDiv {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+}
