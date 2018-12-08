@@ -174,6 +174,15 @@ function handleLineConnectors() {
             color = lineConnectorBackgroundColor;
         } else if (typeof cellColorValue !== "undefined" && typeof lineConnectorBackgroundColor !== "undefined" && cellColorValue != lineConnectorBackgroundColor) {
 
+        } else if (typeof cellColorValue !== "undefined" && typeof color !== "undefined" && typeof lineConnectorBackgroundColor != "undefined" &&
+            typeof lineConnectorBackgroundTempColor != "undefined" && cellColorValue == color && cellColorValue == lineConnectorBackgroundTempColor &&
+            cellColorValue == lineConnectorBackgroundColor && hasLineConnector) {
+            handleWrongCellClicking();
+            color = undefined;
+            lineConnectorBackgroundTempColor = undefined;
+            lineConnectorBackgroundColor = undefined;
+            hasLineConnector = false;
+            return;
         }
 
         if (!isNextLevel) {
