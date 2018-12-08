@@ -108,9 +108,12 @@ function handleLineConnectors() {
         lineConnectorColorBottom = $(this).children('.line-connector-down').css("background-color");
 
         var lineConnectorColor = [lineConnectorColorRight, lineConnectorColorLeft, lineConnectorColorTop, lineConnectorColorBottom];
+        var hasLineConnector = false;
         for (var i = 0; i < lineConnectorColor.length; i++) {
-            if (typeof lineConnectorColor[i] !== "undefined")
+            if (typeof lineConnectorColor[i] !== "undefined") {
                 lineConnectorBackgroundTempColor = lineConnectorColor[i];
+                hasLineConnector = true;
+            }
         }
 
         if (typeof cellColorValue !== "undefined" && typeof lineConnectorBackgroundTempColor === "undefined" && typeof color !== "undefined" &&
@@ -141,6 +144,24 @@ function handleLineConnectors() {
             color = undefined;
             lineConnectorBackgroundTempColor = undefined;
             lineConnectorBackgroundColor = undefined;
+            return;
+        } else if (typeof cellColorValue !== "undefined" && typeof color === "undefined" &&
+            typeof lineConnectorBackgroundTempColor !== "undefined" && typeof lineConnectorBackgroundColor !== "undefined" &&
+            lineConnectorBackgroundTempColor == lineConnectorBackgroundColor && lineConnectorBackgroundTempColor == cellColorValue && hasLineConnector) {
+            handleWrongCellClicking();
+            color = undefined;
+            lineConnectorBackgroundTempColor = undefined;
+            lineConnectorBackgroundColor = undefined;
+            hasLineConnector = false;
+            return;
+        } else if (typeof cellColorValue === "undefined" && typeof color === "undefined" &&
+            typeof lineConnectorBackgroundTempColor !== "undefined" && typeof lineConnectorBackgroundColor !== "undefined" &&
+            lineConnectorBackgroundTempColor != lineConnectorBackgroundColor && lineConnectorBackgroundTempColor != color && hasLineConnector) {
+            handleWrongCellClicking();
+            color = undefined;
+            lineConnectorBackgroundTempColor = undefined;
+            lineConnectorBackgroundColor = undefined;
+            hasLineConnector = false;
             return;
         } else if (typeof cellColorValue === "undefined" && typeof lineConnectorBackgroundTempColor === "undefined") {
             //color = cellColorValue;
